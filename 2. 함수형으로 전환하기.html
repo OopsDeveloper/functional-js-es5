@@ -129,7 +129,16 @@ _map([1, 2, 3, 4], function(v) {
 
 
 // 3. 커링
+// 함수와 인자를 다루는 기법
+// 함수에 인자를 하나씩 적용해 나가다가 필요한 인자가 채워지면 함수의 본체를 실행
   // 1. _curry, _curryr
+  // function _curry(fn) { 
+  //   return function(a) {
+  //     return function(b) {
+  //       return fn(a, b);
+  //     }
+  //   }
+  // }
 var add = _curry(function(a, b) {
   return a + b;
 });
@@ -157,6 +166,7 @@ console.log(
   _map(
     _filter(users, function(user) { return user.age >= 30; }),
     _get('name')));
+    // function(user) { return user.name}
 
 console.log(
   _map(
@@ -164,14 +174,14 @@ console.log(
     _get('age')));
 
 
-//var user1 = users[0];
-//console.log(user1.name);
-//console.log(_get(user1, 'name'));
-//console.log(_get('name')(user1));
-//
-//var get_name = _get('name');
-//
-//console.log( get_name(user1) );
+// var user1 = users[0];
+// console.log(user1.name);
+// console.log(_get(user1, 'name'));
+// console.log(_get('name')(user1));
+
+// var get_name = _get('name');
+
+// console.log( get_name(user1) );
 //console.log( get_name(users[3]) );
 //console.log( get_name(users[4]) );
 
@@ -179,6 +189,8 @@ console.log(
 //console.log( _get(users[10], 'name') );
 
 console.clear();
+
+console.log("kk " + _get('name')(users));
 
 
 
