@@ -15,12 +15,12 @@ var mi = 0;
 var fi = 0;
 
 _.go(
-  _.range(100),
-  _.map(function(val) {
+  _.range(100), //100개짜리 배열을 만듦
+  _.map(function(val) { //100번 실행되면서 연산함
     ++mi;
     return val * val;
   }),
-  _.filter(function(val) {
+  _.filter(function(val) { //100번 실행되면서 걸러내는 작업을 함
     ++fi;
     return val % 2;
   }),
@@ -32,9 +32,10 @@ _.go(
 console.log(mi, fi);
 
 
+//지연평가 동작
+//동작해서 나온 값을 다음으로 넘김
 var mi = 0;
 var fi = 0;
-
 _.go(
   _.range(100),
   L.map(function(val) {
