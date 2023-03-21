@@ -41,6 +41,25 @@ var comments = [
 
 // 1. 특정인의 posts의 모든 comments 거르기
 
+// console.log(
+//   _.filter(posts, function(post) {
+//   return post.user_id == 101;
+// }));
+
+_.go(
+  _.filter(posts, function(post) {
+  return post.user_id == 101;
+  }),
+  function(posts) {
+    return _.filter(comments, function(comment) {
+      return _.find(posts, function(post) {
+        return post.id == comment.post_id
+      });
+    });
+  },
+  console.log);
+
+
 function posts_by(attr) {
   return _.where(posts, attr);
 }
