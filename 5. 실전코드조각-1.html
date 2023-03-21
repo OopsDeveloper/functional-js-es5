@@ -46,18 +46,19 @@ var comments = [
 //   return post.user_id == 101;
 // }));
 
-_.go(
-  _.filter(posts, function(post) {
-  return post.user_id == 101;
-  }),
-  function(posts) {
-    return _.filter(comments, function(comment) {
-      return _.find(posts, function(post) {
-        return post.id == comment.post_id
-      });
-    });
-  },
-  console.log);
+// _.go(
+//   _.filter(posts, function(post) {
+//   return post.user_id == 101;
+//   }),
+//   _.map(function(post_id) {
+//     return post.id;
+//   }),
+//   function(posts_ids) {
+//     return _.filter(comments, function(comment) {
+//         return _.contains(posts_ids, comment.post_id);
+//     });
+//   },
+//   console.log);
 
 
 function posts_by(attr) {
