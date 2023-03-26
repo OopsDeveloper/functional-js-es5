@@ -108,7 +108,12 @@ _.go(
   },
   console.log);
 
+  
+
+  
+
 // 5. users + posts + comments (index_by와 group_by로 효율 높이기)
+// 원본 comments는 변경 되지 않도록 함
 
 var users2 = _.index_by(users, 'id');
 
@@ -142,6 +147,7 @@ var users3 = _.map(users2, function(user) {
 });
 
 console.log(users3);
+
 
 // 5.1. 특정인의 posts의 모든 comments 거르기
 var user = users3[0];
